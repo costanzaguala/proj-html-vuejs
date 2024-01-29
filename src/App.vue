@@ -40,5 +40,5 @@ export default {
 
 <style lang="scss">
     @use "assets/scss/main.scss" as *;
-    @import "assets/scss/partials/reset.scss";
+    @use "assets/scss/partials/reset.scss" as *;;
 </style>
