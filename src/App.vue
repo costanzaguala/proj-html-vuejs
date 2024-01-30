@@ -5,11 +5,7 @@ import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppAbout from './components/AppAbout.vue';
 import AppEvents from './components/AppEvents.vue';
-
 import { store } from './store.js';
-
-
-
 
 export default {
     data() {

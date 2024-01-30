@@ -1,6 +1,19 @@
 <script>
 import { store } from '../store.js';
-import AppCircle from './AppCircle.vue'
+import MainCircle from './MainCircle.vue'
+import SingleEventCard from './SingleEventCard.vue'
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css/navigation';
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+
 export default {
     data() {
         return {
@@ -8,59 +21,39 @@ export default {
             counter : 0,
             store,
             cardIndex: 0,
-            carousel: ''
+            carousel: '',
+            flagEvents: false
             
         };
      },
-     components:{
-        AppCircle
+     components: {
+        MainCircle,
+        SingleEventCard,
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+      return {
+        modules: [Pagination, Navigation],
+      };
     },
     methods: {
-        prevButtonCard(){
-            /* console.log(this.inactiveCard)
-            if(this.inactiveCard > 0){
-                this.inactiveCard--
-            } else if (this.inactiveCard == 0){
-                this.inactiveCard = 4
+        invertLineEvents(){
+            console.log(this.flagEvents)
+            if(this.flagEvents == true){
+                this.flagEvents = false
             } else {
-                this.inactiveCard++
-            } */
-            if(this.counter > 0){
-            this.counter--
-                if(this.counter == 0){
-                    this.counter = 5
-                }
-            } else{
-                console.log('uscito')
+                this.flagEvents = true
             }
-        },
-        nextButtonCard(){
-            console.log(this.counter)
-           /*  console.log(this.inactiveCard)
-            if(this.inactiveCard < 4){
-                this.inactiveCard++
-            } else if (this.inactiveCard == 4){
-                this.inactiveCard = 0
-            } else {
-                this.inactiveCard--
-            } */
-            if(this.counter < 5){
-            this.counter++
-                if(this.counter == 5){
-                    this.counter = 0
-                }
-            } else{
-                console.log('uscito')
-            }
-        },
+        }
     },
 }
 </script>
 
 <template>
     <main class="mb-4">
-        <!-- Primo carosello -->
-        <div id="carouselHeader" class="carousel slide carousel-fade">
+<!-- Primo carosello -->
+        <div id="carouselHeader" class="carousel slide carousel-fade mb-5">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="../assets/img/slider-bike-4.jpg" class="d-block w-100" alt="...">
@@ -116,78 +109,10 @@ export default {
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <!-- <AppCircle /> -->
-         <!-- Secondo carosello -->
-         <section class="second-carousel mb-5">
-            <h2 class="text-center fw-bold mt-4 mb-2">
-                Our Professional Cycling Trainings
-            </h2>
-            <p class="text-center mb-4">
-                Learn from the mountain biking expert.
-            </p>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="carousel-container d-flex justify-content-between pb-5">
-                            <div class="carousel_card" :class="'order-' + counter">
-                                <img class="img-fluid" src="../assets/img/training-box-1.jpg" alt="Training-1">
-                                <div class="card_content">
-                                    <h3>Riding Lesson 1</h3>
-                                    <a href="#">
-                                        View
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="carousel_card" :class="'order-' + (counter + 1)">
-                                <img class="img-fluid" src="../assets/img/training-box-2.jpg" alt="Training-2">
-                                <div class="card_content">
-                                    <h3>Safe Driving 2</h3>
-                                    <a href="#">
-                                        View
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="carousel_card" :class="'order-' + (counter + 2)">
-                                <img class="img-fluid" src="../assets/img/training-box-3.jpg" alt="Training-3">
-                                <div class="card_content">
-                                    <h3>Mountain Bike 3</h3>
-                                    <a href="#">
-                                        View
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="carousel_card" :class="'order-' + (counter + 3)">
-                                <img class="img-fluid" src="../assets/img/training-box-4.jpg" alt="Training-4">
-                                <div class="card_content">
-                                    <h3>Trail Drive 4</h3>
-                                    <a href="#">
-                                        View
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="carousel_card" :class="'order-' + (counter + 4)">
-                                <img class="img-fluid" src="../assets/img/training-box-5.jpg" alt="Training-5">
-                                <div class="card_content">
-                                    <h3>Pedaling 5</h3>
-                                    <a href="#">
-                                        View
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                    <button class="button_prev" @click="prevButtonCard()">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <button class="button_next ms-4" @click="nextButtonCard()">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-        <section class="text-center mb-5">
+
+        
+<!-- <MainCircle /> -->
+       <!--  <section class="text-center mb-5">
             <div class="container">
                 <h3 class="fw-bold">
                     Resent New & Articles
@@ -240,7 +165,189 @@ export default {
                     </div>
                 </div>
             </div>
+        </section> -->
+
+
+        <!-- PRIMO SLIDER FATTO CON SWIPER -->
+        <section class="mb-5">
+            <div class="container">
+                <swiper
+                :slidesPerView="4"
+                :spaceBetween="30"
+                :loop="true"
+                :modules="modules"
+                class="mySwiper"
+                >
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
+                                <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">What is mountain biking called?</h5>
+                                <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
+                                <p class="card-text">In order to get the right benefit from the exercise [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
+                                <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
+                                <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">What is mountain biking called?</h5>
+                                <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
+                                <p class="card-text">In order to get the right benefit from the exercise [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
+                                <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    </swiper-slide>
+                </swiper>
+
+            </div>
         </section>
+
+
+
+        <!-- SECONDO CAROSELLO FATTO CON SWIPER-->
+        <section class="swiper-section mb-5">
+            <div class="container">
+                <swiper
+                :slidesPerView="4"
+                :spaceBetween="30"
+                :loop="true"
+
+                :navigation="true"
+                :modules="modules"
+                class="mySwiper"
+                >
+                    <swiper-slide>
+                        <div class="carousel_card">
+                            <img class="img-fluid" src="../assets/img/training-box-1.jpg" alt="Training-1">
+                            <div class="card_content">
+                                <h3>Riding Lesson 1</h3>
+                                <a href="#">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="carousel_card">
+                            <img class="img-fluid" src="../assets/img/training-box-2.jpg" alt="Training-2">
+                            <div class="card_content">
+                                <h3>Safe Driving 2</h3>
+                                <a href="#">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="carousel_card">
+                            <img class="img-fluid" src="../assets/img/training-box-3.jpg" alt="Training-3">
+                            <div class="card_content">
+                                <h3>Mountain Bike 3</h3>
+                                <a href="#">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="carousel_card">
+                            <img class="img-fluid" src="../assets/img/training-box-4.jpg" alt="Training-4">
+                            <div class="card_content">
+                                <h3>Trail Drive 4</h3>
+                                <a href="#">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="carousel_card">
+                            <img class="img-fluid" src="../assets/img/training-box-5.jpg" alt="Training-5">
+                            <div class="card_content">
+                                <h3>Pedaling 5</h3>
+                                <a href="#">
+                                    View
+                                </a>
+                            </div>
+                        </div> 
+                    </swiper-slide>
+                </swiper>
+            </div>
+        </section>
+        <!-- <SingleEventCard/> -->
     </main>
 </template>
 
@@ -324,9 +431,7 @@ export default {
     transition: transform 0.5s ease-in-out;
 }
 .carousel_card{
-    width: calc(100% / 4);
-    margin: 0 15px;
-    border: 6px solid black;
+    border: 10px solid black;
     position: relative;
     .card_content{
         position: absolute;
