@@ -17,12 +17,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 export default {
     data() {
         return {
-            inactiveCard: 4,
-            counter : 0,
             store,
-            cardIndex: 0,
-            carousel: '',
-            flagEvents: false
             
         };
      },
@@ -38,14 +33,16 @@ export default {
       };
     },
     methods: {
-        invertLineEvents(){
-            console.log(this.flagEvents)
-            if(this.flagEvents == true){
-                this.flagEvents = false
-            } else {
-                this.flagEvents = true
-            }
-        }
+        invertGridToLine(){
+            console.log('prima', store.flagEvents)
+            store.flagEvents = true
+            console.log('dopo', store.flagEvents)
+        },
+        invertLineToGrid(){
+            console.log('prima', store.flagEvents)
+            store.flagEvents = false
+            console.log('dopo', store.flagEvents)
+        },
     },
 }
 </script>
@@ -111,7 +108,7 @@ export default {
         </div>
 
         
-<!-- <MainCircle /> -->
+<MainCircle />
        <!--  <section class="text-center mb-5">
             <div class="container">
                 <h3 class="fw-bold">
@@ -347,11 +344,105 @@ export default {
                 </swiper>
             </div>
         </section>
-        <!-- <SingleEventCard/> -->
+
+
+<!--         <section class="events-container">
+
+    Sezione eventi for-fun
+
+            <div class="container">
+                <div class="d-flex justify-content-end mb-3">
+                    <button @click="invertLineToGrid()" class="px-2 border-0 me-1 rounded">
+                        <i class="fa-solid fa-square"></i>
+                    </button>
+                    <button @click="invertGridToLine()" class="px-2 bg-dark text-white border-0 rounded">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+                <div class="grid-event-container">
+                    <div v-if="store.flagEvents === false" class="row">
+                        <div v-for="(cardEvent, i) in store.events" class="col-4">
+                            <SingleEventCard
+                                :img="cardEvent.img"
+                                :name="cardEvent.name"
+                                :fDate="cardEvent.firstDate"
+                                :lDate="cardEvent.lastDate"
+                                :city="cardEvent.city"
+                                :type="cardEvent.type"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div v-if="store.flagEvents === true" class="inline-event-container">
+                    <div class="inline-event row mb-4 border" v-for="(cardEvent, i) in store.events">
+                        <div class="col-6">
+                            <div class="event-line-img p-3 m-3" 
+                            :style="{
+                                backgroundImage : 'url(../src/assets/img/' + cardEvent.img + ')',
+                                backgroundSize: '100%',
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                            }">
+                            </div>
+                        </div>
+                        <div class="col-2 d-flex align-items-center justify-content-center">
+                            <div class="me-2">
+                                <h2 class="display-3 fw-bold">
+                                    {{ cardEvent.firstDate.split('@')[0].split('/')[2] }}
+                                </h2>
+                                
+                                <span class="ps-4">
+                                    Jun
+                                </span>
+                            </div>
+                            <div class="ms-2">
+                                <h2 class="display-3 fw-bold">
+                                    {{ cardEvent.lastDate.split('@')[0].split('/')[2] }}
+                                </h2>
+                                <span class="ps-4">
+                                    Aug
+                                </span>
+                            </div>
+                                         
+                        </div>
+                        <div class="col-4">
+                            <h3 class="fw-bold fs-4 pt-3">
+                                {{ cardEvent.name }}
+                            </h3>
+                            <p class="text-black-50 fs-6">
+                                <i class="fa-regular fa-clock"></i>
+                                {{ cardEvent.firstDate }} {{ cardEvent.lastDate }}
+                            </p>
+                            <p class="text-black-50 fs-6">
+                                <i class="fa-solid fa-location-dot"></i>
+                                {{ cardEvent.city }}
+                            </p>
+                            <span class="rounded px-3 py-2 bg-light border fs-6 text-black-50">
+                                {{ cardEvent.type }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
     </main>
 </template>
 
 <style lang="scss" scoped>
+.inline-event{
+    border: 2px solid black;
+}
+.inline-event:hover{
+    border-left: 10px solid grey;
+}
+.inline-event-container .row .col-6{
+    .event-line-img{
+        height: 200px;
+        overflow: hidden;
+        border: 1px solid black;
+    }
+}
+
 .carousel-control-prev-icon, .carousel-control-next-icon{
     background-color: black;
     background-image: none;
@@ -404,7 +495,6 @@ export default {
 .biker-circle img:last-child{
     z-index: 10;
 }
-
 .rotate {
   animation-duration: 15s;
   animation-iteration-count: infinite;
