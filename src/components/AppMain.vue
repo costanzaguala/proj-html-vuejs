@@ -1,41 +1,66 @@
 <script>
 import { store } from '../store.js';
+import AppCircle from './AppCircle.vue'
 export default {
     data() {
         return {
             inactiveCard: 4,
+            counter : 0,
             store,
+            cardIndex: 0,
+            carousel: ''
+            
         };
      },
+     components:{
+        AppCircle
+    },
     methods: {
         prevButtonCard(){
-            console.log(this.inactiveCard)
+            /* console.log(this.inactiveCard)
             if(this.inactiveCard > 0){
                 this.inactiveCard--
             } else if (this.inactiveCard == 0){
                 this.inactiveCard = 4
             } else {
                 this.inactiveCard++
+            } */
+            if(this.counter > 0){
+            this.counter--
+                if(this.counter == 0){
+                    this.counter = 5
+                }
+            } else{
+                console.log('uscito')
             }
         },
         nextButtonCard(){
-            console.log(this.inactiveCard)
+            console.log(this.counter)
+           /*  console.log(this.inactiveCard)
             if(this.inactiveCard < 4){
                 this.inactiveCard++
             } else if (this.inactiveCard == 4){
                 this.inactiveCard = 0
             } else {
                 this.inactiveCard--
+            } */
+            if(this.counter < 5){
+            this.counter++
+                if(this.counter == 5){
+                    this.counter = 0
+                }
+            } else{
+                console.log('uscito')
             }
-        }
-    }
+        },
+    },
 }
 </script>
 
 <template>
     <main class="mb-4">
         <!-- Primo carosello -->
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div id="carouselHeader" class="carousel slide carousel-fade">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="../assets/img/slider-bike-4.jpg" class="d-block w-100" alt="...">
@@ -77,70 +102,23 @@ export default {
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon rounded" aria-hidden="true">
                     <i class="fa-solid fa-chevron-left"></i>
                 </span>
                 
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
                 <span class="carousel-control-next-icon rounded" aria-hidden="true">
                     <i class="fa-solid fa-chevron-right"></i>
                 </span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <section class="my-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-8 biker-circle d-flex justify-content-center">
-                        <img class="img-fluid reverse rotate" src="../assets/img/bike-circle.png" alt="">
-                        <img class="img-fluid" src="../assets/img/bike-player.png" alt="">
-                        
-                    </div>
-                    <div class="col-4">
-                        <h2 class="fs-2 fw-bold mb-4">
-                            Do you want to be a professional cyclist?
-                        </h2>
-                        <p class="mb-3">
-                            We offer 6 courses of varying difficulty and beautiful scenery that cyclists of all levels can enjoy. 
-                            You will learn cycling from professionals with our competent and experienced staff. 
-                            You will have a lot of fun with our amazing space. <br>
-                        </p>
-                        <img class="mb-5" src="../assets/img/divider.jpg" alt="">
-                        <div class="row">
-                            <div class="col-4">
-                                <img src="https://img.freepik.com/premium-vector/full-face-helmet-motocross-downhill-mtb-hemet-vector-sketch-ilustration_379823-644.jpg" alt="" class="img-fluid">
-                            </div>
-                            <div class="col-8">
-                                <h3 class="fw-bold">Professional Team</h3>
-                                <p class="">
-                                    We make you professional by adding your sincerity as well as professionalism.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-4">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiEkXijI-Wb0tmGAK8AhkPkBdb_qm_8FCF5w&usqp=CAU" alt="" class="img-fluid">
-                            </div>
-                            <div class="col-8">
-                                <h3 class="fw-bold">Professional Trainings</h3>
-                                <p class="">
-                                    We always ride with the best equipment, respecting nature and fun.
-                                </p>
-                            </div>
-                        </div>
-                        <a class="btn-know" href="#">
-                            Get to know us 
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- <AppCircle /> -->
          <!-- Secondo carosello -->
-         <section class="mb-5">
+         <section class="second-carousel mb-5">
             <h2 class="text-center fw-bold mt-4 mb-2">
                 Our Professional Cycling Trainings
             </h2>
@@ -150,52 +128,54 @@ export default {
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <div class="carousel-container d-flex flex-wrap justify-content-between pb-5">
-                            <div v-if="inactiveCard != 0" class="carousel_card">
+                        <div class="carousel-container d-flex justify-content-between pb-5">
+                            <div class="carousel_card" :class="'order-' + counter">
                                 <img class="img-fluid" src="../assets/img/training-box-1.jpg" alt="Training-1">
                                 <div class="card_content">
-                                    <h3>Riding Lesson</h3>
+                                    <h3>Riding Lesson 1</h3>
                                     <a href="#">
                                         View
                                     </a>
                                 </div>
                             </div>
-                            <div v-if="inactiveCard != 1" class="carousel_card">
+                            <div class="carousel_card" :class="'order-' + (counter + 1)">
                                 <img class="img-fluid" src="../assets/img/training-box-2.jpg" alt="Training-2">
                                 <div class="card_content">
-                                    <h3>Safe Driving</h3>
+                                    <h3>Safe Driving 2</h3>
                                     <a href="#">
                                         View
                                     </a>
                                 </div>
                             </div>
-                            <div v-if="inactiveCard != 2" class="carousel_card">
+                            <div class="carousel_card" :class="'order-' + (counter + 2)">
                                 <img class="img-fluid" src="../assets/img/training-box-3.jpg" alt="Training-3">
                                 <div class="card_content">
-                                    <h3>Mountain Bike</h3>
+                                    <h3>Mountain Bike 3</h3>
                                     <a href="#">
                                         View
                                     </a>
                                 </div>
                             </div>
-                            <div v-if="inactiveCard != 3" class="carousel_card">
+                            <div class="carousel_card" :class="'order-' + (counter + 3)">
                                 <img class="img-fluid" src="../assets/img/training-box-4.jpg" alt="Training-4">
                                 <div class="card_content">
-                                    <h3>Trail Drive</h3>
+                                    <h3>Trail Drive 4</h3>
                                     <a href="#">
                                         View
                                     </a>
                                 </div>
                             </div>
-                            <div v-if="inactiveCard != 4" class="carousel_card">
+                            <div class="carousel_card" :class="'order-' + (counter + 4)">
                                 <img class="img-fluid" src="../assets/img/training-box-5.jpg" alt="Training-5">
                                 <div class="card_content">
-                                    <h3>Pedaling</h3>
+                                    <h3>Pedaling 5</h3>
                                     <a href="#">
                                         View
                                     </a>
                                 </div>
                             </div>
+                            
+                            
                         </div>
                     </div>
                     <button class="button_prev" @click="prevButtonCard()">
@@ -207,7 +187,7 @@ export default {
                 </div>
             </div>
         </section>
-        <section class="text-center">
+        <section class="text-center mb-5">
             <div class="container">
                 <h3 class="fw-bold">
                     Resent New & Articles
@@ -312,7 +292,7 @@ export default {
     position: absolute;
     z-index: 0;
     top: 10px;
-    right: 35px;
+    left: 80px;
 }
 .biker-circle img:last-child{
     z-index: 10;
@@ -337,8 +317,14 @@ export default {
     font-weight: bold;
     padding: 25px 40px;
 }
+
+.second-carousel{
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+}
 .carousel_card{
-    width: calc(100% / 5);
+    width: calc(100% / 4);
     margin: 0 15px;
     border: 6px solid black;
     position: relative;
