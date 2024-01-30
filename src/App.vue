@@ -4,6 +4,8 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppAbout from './components/AppAbout.vue';
+import AppEvents from './components/AppEvents.vue';
+
 import { store } from './store.js';
 
 
@@ -21,6 +23,7 @@ export default {
         AppMain,
         AppFooter,
         AppAbout,
+        AppEvents
     },
 
     methods: {
@@ -34,6 +37,8 @@ export default {
     <AppHeader/>
 
     <AppAbout/>
+
+    <AppEvents/>
 
     <AppMain/>
 
