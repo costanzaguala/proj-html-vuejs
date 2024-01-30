@@ -8,6 +8,7 @@ export const store = reactive ({
             name: "Toronto Cycling Event 2023",
             city: 'Toronto',
             type: 'Bicycle Race',
+            img: 'event1.jpg'
 
         },
         {
@@ -16,6 +17,7 @@ export const store = reactive ({
             name: "Istanbul Cycling Event 2023",
             city: 'Istanbul',
             type: 'Bike Sport',
+            img: 'event2.jpg'
         },
         {
             firstDate: '2022/06/30 - 01:30',
@@ -23,6 +25,7 @@ export const store = reactive ({
             name: "Paris Cycling Event 2023",
             city: 'Parisi',
             type: 'Cycling Tour',
+            img: 'event3.jpg'
 
         },
         
@@ -32,7 +35,7 @@ export const store = reactive ({
             name: "New Jersey Cycling Event 2023",
             city: 'New Jersey',
             type: 'Bicycle Race',
-
+            img: 'event4.jpg'
         },
         {
             firstDate: '2022/06/30 - 01:30',
@@ -40,7 +43,7 @@ export const store = reactive ({
             name: "London Cycling Event 2023",
             city: 'London ',
             type: 'Bike Sport',
-
+            img: 'event5.jpg'
         },
         
         {
@@ -49,6 +52,7 @@ export const store = reactive ({
             name: "Kiev Cycling Event 2023",
             city: 'Kiev',
             type: 'Bicycle Race',
+            img: 'event6.jpg'
 
         },
         {
@@ -57,7 +61,7 @@ export const store = reactive ({
             name: "Colorado Cycling Event 2023",
             city: 'Colorado',
             type: 'Bike Sport',
-
+            img: 'event7.jpg'
         },
         
         {
@@ -66,7 +70,7 @@ export const store = reactive ({
             name: "Amsterdam Cycling Event 2023",
             city: 'Amsterdam',
             type: 'Bicycle Race',
-
+            img: 'event8.jpg'
         },
         {
             firstDate: '2022/06/30 - 01:30',
@@ -74,7 +78,7 @@ export const store = reactive ({
             name: "Toronto Cycling Event 2023",
             city: 'Toronto',
             type: 'Bike Sport',
-
+            img: 'event9.jpg'
         },
         
         {
@@ -83,7 +87,7 @@ export const store = reactive ({
             name: "Paris Cycling Event 2023",
             city: 'Paris',
             type: 'Bicycle Race',
-
+            img: 'event10.jpg'
         },
     ] 
 })
