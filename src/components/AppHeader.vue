@@ -15,7 +15,7 @@ export default {
 
     <header class="fixed-top">
         <nav class="navbar">
-            <div class="container-fluid navbar-expand-lg">
+            <div class="container navbar-expand-lg">
 
                 <img src="../assets/img/logo-gobike.png" alt="logo">
 
