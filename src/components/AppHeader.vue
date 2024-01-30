@@ -91,6 +91,7 @@ export default {
 
 header {
     background-color: white;
+    position: fixed;
 }
 
 img {
@@ -102,7 +103,7 @@ img {
 }
 
 .navbar-expand-lg .offcanvas {
-flex-grow: 0;
+    flex-grow: 0;
 }
 
 .nav-item {
@@ -116,8 +117,8 @@ flex-grow: 0;
 }
 
 .button-upcoming-events img {
-  filter: invert(100%);
-  width: 50px;
+    filter: invert(100%);
+    width: 50px;
 }
 
 .button-upcoming-events > * {
