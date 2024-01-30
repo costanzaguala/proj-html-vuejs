@@ -1,42 +1,10 @@
 <script>
+import { store } from '../store.js';
 export default {
     data() {
         return {
             inactiveCard: 4,
-            events:[
-                {
-                    firstDate: '2022/06/22 - 01:30',
-                    lastDate: '2024/08/23 - 7:00',
-                    name: "Toronto Cycling Event 2023",
-                    city: 'Toronto',
-                    type: 'Bicycle Race',
-
-                },
-                {
-                    firstDate: '2022/06/22 - 01:30',
-                    lastDate: '2024/08/23 - 7:00',
-                    name: "Istanbul Cycling Event 2023",
-                    city: 'Istanbul',
-                    type: 'Bike Sport',
-                },
-                {
-                    firstDate: '2022/06/30 - 01:30',
-                    lastDate: '2024/11/08 - 16:30',
-                    name: "Paris Cycling Event 2023",
-                    city: 'Parisi',
-                    type: 'Cycling Tour',
-
-                },
-                
-                {
-                    firstDate: '2022/06/25 - 03:00',
-                    lastDate: '2024/08/24 - 5:30',
-                    name: "New Jersey Cycling Event 2023",
-                    city: 'New Jersey',
-                    type: 'Bicycle Race',
-
-                }
-            ] 
+            store,
         };
      },
     methods: {
@@ -242,55 +210,55 @@ export default {
         <section class="text-center">
             <div class="container">
                 <h3 class="fw-bold">
-                Resent New & Articles
-            </h3>
-            <p>Important information about bike</p>
-            <div class="row">
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                        <div>22.06.2022 - Bike</div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
-                            <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
-                            <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                    Resent New & Articles
+                </h3>
+                <p>Important information about bike</p>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div>22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
+                                <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div>22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">What is mountain biking called?</h5>
+                                <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div>22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
+                                <p class="card-text">In order to get the right benefit from the exercise [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div>22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
+                                <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                        <div>22.06.2022 - Bike</div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">What is mountain biking called?</h5>
-                            <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
-                            <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                        <div>22.06.2022 - Bike</div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
-                            <p class="card-text">In order to get the right benefit from the exercise [...]</p>
-                            <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                        <div>22.06.2022 - Bike</div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
-                            <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
-                            <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
         </section>
     </main>
