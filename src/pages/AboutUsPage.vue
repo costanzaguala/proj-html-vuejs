@@ -1,18 +1,36 @@
 <script>
 import { store } from '../store.js';
 import MainCircle from '../components/MainCircle.vue'
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css/navigation';
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+
 export default {
     data() {
         return {
-            store
+            store,
+            
         };
      },
      components: {
         MainCircle,
-     },
-    methods: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+      return {
+        modules: [Pagination, Navigation],
+      };
+    },
 
-    }
 }
 </script>
 
@@ -29,74 +47,213 @@ export default {
         </div>
     </section>
 
-<!-- MAIN CIRCLE QUI -->
-<MainCircle/>
-    <section class="text-center grey-background py-5">
-            <div class="container">
-                <h3 class="fw-bold">
-                    What Are Our Customers Saying ?
-                </h3>
-                <p>Every customer is valuable to us. Here are the reviews of some of our customers who chose us.</p>
-                <div class="row">
-                    <div class="col-3">
-                        <div class="card border-light carousel_card p-4" style="width: 19rem;">
-                            <div class="card_content d-flex flex-column align-items-center">
-                                <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
-                                <div class="quote-container">
-                                    <img src="../assets/img/pngegg.png" alt="">
-                                </div>
-                                <div class="circular-img-container my-5">
-                                    <img src="../assets/img/biker4.jpg" alt="...">
-                                </div>
-                                <p>Michael</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card border-light carousel_card p-4" style="width: 19rem;">
-                            <div class="card_content d-flex flex-column align-items-center">
-                                <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
-                                <div class="quote-container">
-                                    <img src="../assets/img/pngegg.png" alt="">
-                                </div>
-                                <div class="circular-img-container my-5">
-                                    <img src="../assets/img/biker4.jpg" alt="...">
-                                </div>
-                                <p>Michael</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card border-light carousel_card p-4" style="width: 19rem;">
-                            <div class="card_content d-flex flex-column align-items-center">
-                                <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
-                                <div class="quote-container">
-                                    <img src="../assets/img/pngegg.png" alt="">
-                                </div>
-                                <div class="circular-img-container my-5">
-                                    <img src="../assets/img/biker4.jpg" alt="...">
-                                </div>
-                                <p>Michael</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card border-light carousel_card p-4" style="width: 19rem;">
-                            <div class="card_content d-flex flex-column align-items-center">
-                                <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
-                                <div class="quote-container">
-                                    <img src="../assets/img/pngegg.png" alt="">
-                                </div>
-                                <div class="circular-img-container my-5">
-                                    <img src="../assets/img/biker4.jpg" alt="...">
-                                </div>
-                                <p>Michael</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section id="expert-staff" class="swiper-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold in-page pt-3">Our Expert Staff</h2>
+                <p>Learn golf from the pros.</p>
             </div>
-        </section>
+
+            <swiper
+            :slidesPerView="4"
+            :spaceBetween="30"
+            :loop="true"
+            :freeMode="true" 
+
+
+            :modules="modules"
+            class="mySwiper"
+            >
+                <swiper-slide>
+                    <div class="card">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <div>
+                                <img src="../assets/img/biker4.jpg" alt="">
+                            </div>
+                            <div class="black-section d-flex flex-column align-items-center justify-content-center">
+                                <p>Robert Lee</p>
+                                <p>Biker</p>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <div>
+                                <img src="../assets/img/biker4.jpg" alt="">
+                            </div>
+                            <div class="black-section d-flex flex-column align-items-center justify-content-center">
+                                <p>Robert Lee</p>
+                                <p>Biker</p>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <div>
+                                <img src="../assets/img/biker4.jpg" alt="">
+                            </div>
+                            <div class="black-section d-flex flex-column align-items-center justify-content-center">
+                                <p>Robert Lee</p>
+                                <p>Biker</p>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <div>
+                                <img src="../assets/img/biker4.jpg" alt="">
+                            </div>
+                            <div class="black-section d-flex flex-column align-items-center justify-content-center">
+                                <p>Robert Lee</p>
+                                <p>Biker</p>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <div>
+                                <img src="../assets/img/biker4.jpg" alt="">
+                            </div>
+                            <div class="black-section d-flex flex-column align-items-center justify-content-center">
+                                <p>Robert Lee</p>
+                                <p>Biker</p>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper>
+        </div>
+    </section>
+
+
+
+
+    <section id="customer-review" class="swiper-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold in-page pt-3">
+                    What Are Our Customers Saying ?</h2>
+                <p>Every customer is valuable to us. Here are the reviews of some of our customers who chose us.</p>
+            </div>
+
+            <swiper
+            :slidesPerView="4"
+            :spaceBetween="30"
+            :loop="true"
+            :freeMode="true" 
+
+
+            :modules="modules"
+            class="mySwiper"
+            >
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center p-4">
+                            <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
+                            <div class="quote-container">
+                                <img src="../assets/img/pngegg.png" alt="">
+                            </div>
+                            <div class="circular-img-container my-5">
+                                <img src="../assets/img/biker4.jpg" alt="...">
+                            </div>
+                            <p class="card-text">Cristian</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center p-4">
+                            <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
+                            <div class="quote-container">
+                                <img src="../assets/img/pngegg.png" alt="">
+                            </div>
+                            <div class="circular-img-container my-5">
+                                <img src="../assets/img/biker4.jpg" alt="...">
+                            </div>
+                            <p class="card-text">Jane</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center p-4">
+                            <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
+                            <div class="quote-container">
+                                <img src="../assets/img/pngegg.png" alt="">
+                            </div>
+                            <div class="circular-img-container my-5">
+                                <img src="../assets/img/biker4.jpg" alt="...">
+                            </div>
+                            <p class="card-text">Michael</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center p-4">
+                            <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
+                            <div class="quote-container">
+                                <img src="../assets/img/pngegg.png" alt="">
+                            </div>
+                            <div class="circular-img-container my-5">
+                                <img src="../assets/img/biker4.jpg" alt="...">
+                            </div>
+                            <p class="card-text">Michael</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="card border-white">
+                        <div class="card_content text-center d-flex flex-column align-items-center justify-content-center p-4">
+                            <p class="card-text pt-3">I just couldn't get enough of riding a bike. And I signed up here. A friendly and competent team. Thank you for everything.</p>
+                            <div class="quote-container">
+                                <img src="../assets/img/pngegg.png" alt="">
+                            </div>
+                            <div class="circular-img-container my-5">
+                                <img src="../assets/img/biker4.jpg" alt="...">
+                            </div>
+                            <p class="card-text">Michael</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper>
+        </div>
+    </section>
+
+        
 
 
 </template>
@@ -190,21 +347,16 @@ export default {
     font-weight: bold;
     padding: 25px 40px;
 }
-.grey-background {
+
+#customer-review {
     background-color: #FBFBFB;
+
 }
 
 .carousel_card {
-    width: calc(100% / 5);
-    margin: 0 15px;
+    margin: 0 10px;
     position: relative;
     border: none;
-
-    .card_content {
-        width: 100%;
-        height: 100%;
-        flex-grow: 1;
-    }
 
     p {
         font-size: 14px;
@@ -237,10 +389,38 @@ export default {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        top: 70px;
+        bottom: 50px;
         opacity: 0.2;
         transform: rotate(10deg);
     }
 }
+#expert-staff {
 
+    img{
+        width: 100%
+    }
+    .card {
+        border: 10px solid #fbfbfb;
+
+    }
+}
+
+.black-section {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 120px;
+    bottom: 0;
+    color: white;
+    line-height: 0.5;
+    
+    i{
+        color: white;
+        padding: 5px
+    }
+
+    > p:nth-child(2) {
+        color: grey;
+    }
+}
 </style>
