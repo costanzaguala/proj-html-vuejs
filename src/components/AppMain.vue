@@ -34,14 +34,10 @@ export default {
     },
     methods: {
         invertGridToLine(){
-            console.log('prima', store.flagEvents)
             store.flagEvents = true
-            console.log('dopo', store.flagEvents)
         },
         invertLineToGrid(){
-            console.log('prima', store.flagEvents)
             store.flagEvents = false
-            console.log('dopo', store.flagEvents)
         },
     },
 }
@@ -50,62 +46,64 @@ export default {
 <template>
     <main class="mb-4">
 <!-- Primo carosello -->
-        <div id="carouselHeader" class="carousel slide carousel-fade mb-5">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../assets/img/slider-bike-4.jpg" class="d-block w-100" alt="...">
-                    <div class="slider-text">
-                        <h1>
-                            Unforgettable <br>
-                            Cycling Experience
-                        </h1>
-                        <p>Learn cycling from the pros.</p>
-                        <a href="#">
-                            Learn More <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+       <section id="header-carousel-section">
+            <div id="carouselHeader" class="carousel slide carousel-fade mb-5">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../assets/img/slider-bike-4.jpg" class="d-block w-100" alt="...">
+                        <div class="slider-text">
+                            <h1>
+                                Unforgettable <br>
+                                Cycling Experience
+                            </h1>
+                            <p>Learn cycling from the pros.</p>
+                            <a href="#">
+                                Learn More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/img/slider-bike-9.jpg" class="d-block w-100" alt="...">
+                        <div class="slider-text">
+                            <h1>
+                                Professional <br>
+                                Cycling Club
+                            </h1>
+                            <p>Learn cycling from the pros</p>
+                            <a href="#">
+                                Learn More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/img/slider-bike-12.jpg" class="d-block w-100" alt="...">
+                        <div class="slider-text">
+                            <h1>
+                                Learn Mountain Bike  <br>
+                                From The Expert
+                            </h1>
+                            <p>Learn cycling from the pros</p>
+                            <a href="#">
+                                Learn More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="../assets/img/slider-bike-9.jpg" class="d-block w-100" alt="...">
-                    <div class="slider-text">
-                        <h1>
-                            Professional <br>
-                            Cycling Club
-                        </h1>
-                        <p>Learn cycling from the pros</p>
-                        <a href="#">
-                            Learn More <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../assets/img/slider-bike-12.jpg" class="d-block w-100" alt="...">
-                    <div class="slider-text">
-                        <h1>
-                            Learn Mountain Bike  <br>
-                            From The Expert
-                        </h1>
-                        <p>Learn cycling from the pros</p>
-                        <a href="#">
-                            Learn More <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon rounded" aria-hidden="true">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                    
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
+                    <span class="carousel-control-next-icon rounded" aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon rounded" aria-hidden="true">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </span>
-                
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
-                <span class="carousel-control-next-icon rounded" aria-hidden="true">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+       </section>
 
         
 <MainCircle />
@@ -164,119 +162,17 @@ export default {
             </div>
         </section> -->
 
-
-        <!-- PRIMO SLIDER FATTO CON SWIPER -->
-        <section class="mb-5">
+       <!-- PRIMO CAROSELLO FATTO CON SWIPER-->
+       <section id="professionalTrainingsSection watch fade-in" class="swiper-section mb-5 py-3">
             <div class="container">
-                <swiper
-                :slidesPerView="4"
-                :spaceBetween="30"
-                :loop="true"
-                :modules="modules"
-                class="mySwiper"
-                >
-                    <swiper-slide>
-                        <div class="card" style="width: 18rem;">
-                            <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                            <div class="text-center">22.06.2022 - Bike</div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
-                                <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
-                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="card" style="width: 18rem;">
-                            <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                            <div class="text-center">22.06.2022 - Bike</div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">What is mountain biking called?</h5>
-                                <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
-                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="card" style="width: 18rem;">
-                            <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                            <div class="text-center">22.06.2022 - Bike</div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
-                                <p class="card-text">In order to get the right benefit from the exercise [...]</p>
-                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                            <div class="text-center">22.06.2022 - Bike</div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
-                                <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
-                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                            </div>
-                        </div>
-                    </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="card" style="width: 18rem;">
-                            <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                            <div class="text-center">22.06.2022 - Bike</div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
-                                <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
-                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="card" style="width: 18rem;">
-                            <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                            <div class="text-center">22.06.2022 - Bike</div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">What is mountain biking called?</h5>
-                                <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
-                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="card" style="width: 18rem;">
-                            <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                            <div class="text-center">22.06.2022 - Bike</div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
-                                <p class="card-text">In order to get the right benefit from the exercise [...]</p>
-                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
-                            <div class="text-center">22.06.2022 - Bike</div>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
-                                <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
-                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
-                            </div>
-                        </div>
-                    </div>
-                    </swiper-slide>
-                </swiper>
-
-            </div>
-        </section>
-
-
-
-        <!-- SECONDO CAROSELLO FATTO CON SWIPER-->
-        <section class="swiper-section mb-5">
-            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold in-page">
+                        Our Professional Cycling Trainings
+                    </h2>
+                    <p>
+                        Learn from the mountain biking expert.
+                    </p>
+                </div>
                 <swiper
                 :slidesPerView="4"
                 :spaceBetween="30"
@@ -345,6 +241,124 @@ export default {
             </div>
         </section>
 
+        <!-- Secondo SLIDER FATTO CON SWIPER -->
+        <section id="NewArticleSection" class="pb-5 pt-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold px-5">
+                        Resent New & Articles
+                    </h2>
+                    <p>
+                        Important information about bike
+                    </p>
+                </div>
+                <swiper
+                :slidesPerView="4"
+                :spaceBetween="30"
+                :loop="true"
+                :modules="modules"
+                class="mySwiper"
+                >
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
+                                <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">What is mountain biking called?</h5>
+                                <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
+                                <p class="card-text">In order to get the right benefit from the exercise [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
+                                <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
+                                <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">What is mountain biking called?</h5>
+                                <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
+                                <p class="card-text">In order to get the right benefit from the exercise [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div class="text-center">22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
+                                <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    </swiper-slide>
+                </swiper>
+
+            </div>
+        </section>
+
+
+
+ 
 
 <!--         <section class="events-container">
 
@@ -429,6 +443,22 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+.fade-in{
+    opacity:0;
+    transform: translateY(2ovh);
+}
+.fade-in.in-page{
+    opacity: 1;
+    transform: translateY(0vh);
+}
+
+#header-carousel-section{
+    margin: 50px 0;
+}
+#NewArticleSection{
+    background-color: #FBFBFB;
+}
 .inline-event{
     border: 2px solid black;
 }
@@ -442,7 +472,35 @@ export default {
         border: 1px solid black;
     }
 }
-
+.card{
+    box-shadow: 0 0 10px 0px;
+    margin: 20px 10px;
+}
+.card:hover{
+     visibility: visible;
+     animation-delay: 1s;
+     animation-name: fadeInLeft;
+     will-change: transform;
+     transform: perspective(300px)
+     rotateX(-0.66deg)
+     rotateY(1.88deg)
+     scale3d(1, 1, 1);
+     margin-right: 30px;
+}
+@keyframes fadeInLeft{
+    0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+}
+100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+}
 .carousel-control-prev-icon, .carousel-control-next-icon{
     background-color: black;
     background-image: none;
