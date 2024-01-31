@@ -4,7 +4,9 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppAbout from './components/AppAbout.vue';
-import AppEvents from './components/AppEvents.vue';
+/* import AppEvents from './components/AppEvents.vue';
+import AppPackages from './components/AppPackages.vue'; */
+
 import AppLoaderPage from './components/AppLoaderPage.vue';
 
 import { store } from './store.js';
@@ -21,8 +23,9 @@ export default {
         AppMain,
         AppFooter,
         AppAbout,
-        AppEvents,
-        AppLoaderPage
+        /* AppEvents, */
+        AppLoaderPage,
+        /* AppPackages */
     },
 
     methods: {
@@ -33,12 +36,14 @@ export default {
 
 <template>
     <AppLoaderPage/>
-    
+
     <AppHeader/>
 
     <AppAbout/>
 
-    <AppEvents/>
+<!--     <AppPackages/>
+
+    <AppEvents/> -->
 
     <AppMain/>
 
