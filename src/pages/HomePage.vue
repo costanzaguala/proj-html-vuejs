@@ -1,7 +1,7 @@
 <script>
 import { store } from '../store.js';
-import MainCircle from './MainCircle.vue'
-import SingleEventCard from './SingleEventCard.vue'
+import MainCircle from '../components/MainCircle.vue'
+import SingleEventCard from '../components/SingleEventCard.vue'
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css/navigation';
@@ -21,7 +21,7 @@ export default {
             
         };
      },
-     /* components: {
+     components: {
         MainCircle,
         SingleEventCard,
         Swiper,
@@ -39,15 +39,16 @@ export default {
         invertLineToGrid(){
             store.flagEvents = false
         },
-    }, */
+    },
 }
 </script>
 
 <template>
-    <router-view></router-view>
+   
+    <!-- <router-view></router-view> -->
     <main class="mb-4">
 <!-- Primo carosello -->
-       <!-- <section id="header-carousel-section">
+       <section id="header-carousel-section">
             <div id="carouselHeader" class="carousel slide carousel-fade mb-5">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -104,10 +105,10 @@ export default {
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-       </section> -->
+       </section>
 
         
-<!-- <MainCircle /> -->
+<MainCircle />
        <!--  <section class="text-center mb-5">
             <div class="container">
                 <h3 class="fw-bold">
@@ -164,7 +165,7 @@ export default {
         </section> -->
 
        <!-- PRIMO CAROSELLO FATTO CON SWIPER-->
-       <!-- <section id="professionalTrainingsSection watch fade-in" class="swiper-section mb-5 py-3">
+       <section id="professionalTrainingsSection watch fade-in" class="swiper-section mb-5 py-3">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold in-page">
@@ -240,10 +241,18 @@ export default {
                     </swiper-slide>
                 </swiper>
             </div>
-        </section> -->
+        </section>
+
+        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE EVENTI DA INSERIRE QUI</p>
+        <!-- Componente eventi -->
+        
+        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE OUR EXPERT TRAINER DA INSERIRE QUI</p>
+        <!-- Componente Trainer -->
+        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE PACKAGES TRAINER DA INSERIRE QUI</p>
+        <!-- Componente Packages -->
 
         <!-- Secondo SLIDER FATTO CON SWIPER -->
-        <!-- <section id="NewArticleSection" class="pb-5 pt-5">
+        <section id="NewArticleSection" class="pb-5 pt-5">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold px-5">
@@ -371,12 +380,7 @@ export default {
                 </swiper>
 
             </div>
-        </section> -->
-
-
-
- 
-
+        </section>
         <!-- <section class="events-container">
 
     Sezione eventi for-fun

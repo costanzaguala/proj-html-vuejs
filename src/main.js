@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { router } from './router.js'
 import App from './App.vue';
 
 // Import all of Bootstrap's JS
@@ -16,7 +17,7 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
 /* add icons to the library */
 library.add(faUserSecret)
 
-createApp(App)
+createApp(App).use(router)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')
 

@@ -32,11 +32,13 @@ export default {
 
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+                            <router-link :to="{ name: 'home' }" class="nav-link active">Home</router-link>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">About us</a>
+                                <!-- <a class="nav-link active" href="#">About us</a> -->
+                                <router-link :to="{ name: 'about' }" class="nav-link active">About Us</router-link>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -55,7 +57,8 @@ export default {
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Packages</a>
+                                <!-- <a class="nav-link active" href="#">Packages</a> -->
+                                <router-link :to="{ name: 'packages' }" class="nav-link active">Packages</router-link>
                             </li>
 
                             <li class="nav-item">
@@ -72,8 +75,11 @@ export default {
                 <div class="d-flex">
                     <div class="button-upcoming-events d-flex align-items-center"> 
                         <img src="../assets/img/helmet.png" alt="">  
-                        <p>
+                        <!-- <p>
                             Upcoming events
+                        </p> -->
+                        <p>
+                            <router-link :to="{ name: 'events'}" class="text-white text-decoration-none fw-bold">Upcoming events</router-link>
                         </p>
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>

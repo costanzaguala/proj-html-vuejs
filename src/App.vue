@@ -3,7 +3,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
-import AppAbout from './components/AppAbout.vue';
+/* import AppAbout from './components/AppAbout.vue'; */
 /* import AppEvents from './components/AppEvents.vue';
 import AppPackages from './components/AppPackages.vue'; */
 
@@ -22,7 +22,7 @@ export default {
         AppHeader,
         AppMain,
         AppFooter,
-        AppAbout,
+        /* AppAbout, */
         /* AppEvents, */
         AppLoaderPage,
         /* AppPackages */
@@ -39,7 +39,7 @@ export default {
 
     <AppHeader/>
 
-    <AppAbout/>
+    <!-- <AppAbout/> -->
 
 <!--     <AppPackages/>
 

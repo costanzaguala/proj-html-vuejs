@@ -32,7 +32,7 @@ export default {
                         You will learn cycling from professionals with our competent and experienced staff. 
                         You will have a lot of fun with our amazing space. <br>
                     </p>
-                    <img class="mb-5" src="../assets/img/divider.jpg" alt="">
+                    <img class="mb-5 text-start" src="../assets/img/divider.jpg" alt="">
                     <div class="row">
                         <div class="col-md-4 col-sm-12">
                             <img src="https://img.freepik.com/premium-vector/full-face-helmet-motocross-downhill-mtb-hemet-vector-sketch-ilustration_379823-644.jpg" alt="" class="img-fluid">
