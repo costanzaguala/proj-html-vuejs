@@ -82,7 +82,7 @@ export default {
     z-index: 0;
     width: 100%;
 }
-/* .biker-circle img:first-child{
+.biker-circle img:first-child{
     position: absolute;
     z-index: 0;
     top: 10px;
@@ -90,7 +90,7 @@ export default {
 }
 .biker-circle img:last-child{
     z-index: 10;
-} */
+}
 
 .rotate {
   animation-duration: 15s;

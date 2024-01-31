@@ -482,12 +482,10 @@ export default {
     transform: translateY(0vh);
 }
 
-#header-carousel-section{
+/* #header-carousel-section{
     margin: 50px 0;
-}
-#NewArticleSection{
-    background-color: #FBFBFB;
-}
+} */
+
 .inline-event{
     border: 2px solid black;
 }
@@ -501,148 +499,8 @@ export default {
         border: 1px solid black;
     }
 }
-.card{
-    box-shadow: 0 0 10px 0px;
-    margin: 20px 10px;
-}
-.card:hover{
-     visibility: visible;
-     animation-delay: 1s;
-     animation-name: fadeInLeft;
-     will-change: transform;
-     transform: perspective(300px)
-     rotateX(-0.66deg)
-     rotateY(1.88deg)
-     scale3d(1, 1, 1);
-     margin-right: 30px;
-}
-@keyframes fadeInLeft{
-    0% {
-    opacity: 0;
-    -webkit-transform: translateX(-20px);
-    -ms-transform: translateX(-20px);
-    transform: translateX(-20px);
-}
-100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-}
-}
-.carousel-control-prev-icon, .carousel-control-next-icon{
-    background-color: black;
-    background-image: none;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    font-size: 1.5rem;
 
-}
-
-.carousel-control-prev, .carousel-control-next{
-    height: 10%;
-    top:50%;
-    transform: translateY(-50%);
-}
-
-.slider-text{
-    position: absolute;
-    z-index: 999;
-    top: 30%;
-    left: 20%;
-    color: white;
-    font-weight: bold;
-    h1{
-        font-size: 3.5rem; 
-    }
-    p{
-        font-size: 1.1rem;
-        margin-bottom: 50px;
-    }
-    a{
-        text-decoration: none;
-        color: white;
-        background-color: black;
-        padding: 25px 50px;
-        margin-top: 50px;
-    }
-}
-.biker-circle{
-    position: relative;
-
-}
-.biker-circle img:first-child{
-    position: absolute;
-    z-index: 0;
-    top: 10px;
-    left: 80px;
-}
-.biker-circle img:last-child{
-    z-index: 10;
-}
-.rotate {
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-name: rotate;
-  animation-timing-function: linear;
-}
-
-@keyframes rotate {
-  from { transform: rotate(  0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-.btn-know{
-    background-color: black;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 25px 40px;
-}
-
-.second-carousel{
-    width: 100%;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-}
-.carousel_card{
-    border: 10px solid black;
-    position: relative;
-    .card_content{
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
-        h3{
-            font-weight: bold;
-            font-size: 1.1em;
-            color: white;
-            padding: 15px;
-        }
-        a{
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            background-color: black;
-            padding: 10px 20px;
-            margin: 15px;
-            position: absolute;
-            bottom: 10px;
-            display: none;
-        }
-        &:hover{
-                background-color: rgb(0, 0, 0, 0.25);
-                transition: all 0.3s ease ;
-                & a{
-                    display: block;
-                }
-            }
-    }
-}
-
+// ?????????????
 .button_prev, .button_next{
     width: 60px;
     height: 60px;
