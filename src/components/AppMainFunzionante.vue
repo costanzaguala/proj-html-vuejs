@@ -1,13 +1,7 @@
 <script>
 import { store } from '../store.js';
-import MainCircle from '../components/MainCircle.vue'
-import SingleEventCard from '../components/SingleEventCard.vue'
-/* import PackagesPage from './PackagesPage.vue'
-import EventsPage from './EventsPage.vue'
-import TrainingPage from './TrainingPage.vue' */
-
-
-
+import MainCircle from './MainCircle.vue'
+import SingleEventCard from './SingleEventCard.vue'
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css/navigation';
@@ -30,9 +24,6 @@ export default {
      components: {
         MainCircle,
         SingleEventCard,
-            /*      PackagesPage,
-                    EventsPage,
-                    TrainingPage, */
         Swiper,
         SwiperSlide,
     },
@@ -53,9 +44,9 @@ export default {
 </script>
 
 <template>
-    <!-- <router-view></router-view> -->
+    <router-view></router-view>
     <main class="mb-4">
-<!-- CAROSELLO HEADER-->
+<!-- Primo carosello -->
        <section id="header-carousel-section">
             <div id="carouselHeader" class="carousel slide carousel-fade mb-5">
                 <div class="carousel-inner">
@@ -115,8 +106,62 @@ export default {
             </div>
        </section>
 
-        <!-- COMPONENTE BIKER-CIRCLE -->
-        <MainCircle />
+        
+<MainCircle />
+       <!--  <section class="text-center mb-5">
+            <div class="container">
+                <h3 class="fw-bold">
+                    Resent New & Articles
+                </h3>
+                <p>Important information about bike</p>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike5-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div>22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Road bike or mountain bike?</h5>
+                                <p class="card-text">Comparated to similar road bikes with a solid fram structure [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike6-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div>22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">What is mountain biking called?</h5>
+                                <p class="card-text">Mountain biking is one of the most popolar outdoors sports, [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike3-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div>22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How much should you cycle a day?</h5>
+                                <p class="card-text">In order to get the right benefit from the exercise [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/news-bike4-300x180.jpg" class="card-img-top px-4 pt-4" alt="...">
+                            <div>22.06.2022 - Bike</div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">How long does it take 5 km by bike</h5>
+                                <p class="card-text">It takes 5 km and 10 minutes, sir. But at [...]</p>
+                                <a href="#" class="btn btn-dark px-4 py-2">More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
 
        <!-- PRIMO CAROSELLO FATTO CON SWIPER-->
        <section id="professionalTrainingsSection watch fade-in" class="swiper-section mb-5 py-3">
@@ -134,7 +179,7 @@ export default {
                 :spaceBetween="30"
                 :loop="true"
 
-                :navigation="{ nextEl: '.swiper-button-prev', prevEl: '.swiper-button-next'}"
+                :navigation="true"
                 :modules="modules"
                 class="mySwiper"
                 >
@@ -194,21 +239,9 @@ export default {
                         </div> 
                     </swiper-slide>
                 </swiper>
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="swiper-button-prev" slot="button-prev"></div>
-                    <div class="swiper-button-next" slot="button-next"></div>
-                </div>
             </div>
         </section>
 
-        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE EVENTI DA INSERIRE QUI</p>
-        <!-- Componente eventi -->
-<!-- <EventsPage /> -->
-        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE OUR EXPERT TRAINER DA INSERIRE QUI</p>
-        <!-- Componente Trainer -->
-        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE PACKAGES TRAINER DA INSERIRE QUI</p>
-        <!-- Componente Packages -->
-<!-- <PackagesPage /> -->
         <!-- Secondo SLIDER FATTO CON SWIPER -->
         <section id="NewArticleSection" class="pb-5 pt-5">
             <div class="container">
@@ -339,6 +372,11 @@ export default {
 
             </div>
         </section>
+
+
+
+ 
+
         <!-- <section class="events-container">
 
     Sezione eventi for-fun
@@ -603,10 +641,5 @@ export default {
         background-color: grey;
         cursor: pointer;
     }
-}
-
-.swiper-button-next, .swiper-button-prev {
-    position: unset;
-    padding-top: 40px;
 }
 </style>

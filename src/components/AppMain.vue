@@ -21,17 +21,18 @@ export default {
             
         };
      },
-     /* components: {
+     components: {
         MainCircle,
-        SingleEventCard,
+        /* SingleEventCard,
         Swiper,
-        SwiperSlide,
+        SwiperSlide, */
     },
-    setup() {
+    /* setup() {
       return {
         modules: [Pagination, Navigation],
       };
     },
+   
     methods: {
         invertGridToLine(){
             store.flagEvents = true
@@ -39,14 +40,20 @@ export default {
         invertLineToGrid(){
             store.flagEvents = false
         },
-    }, */
+    },  */
 }
 </script>
 
 <template>
+
+    <!-- Componente che mi permette di avere, per URL diversi, contenuti informativi diversi -->
     <router-view></router-view>
+
     <main class="mb-4">
-<!-- Primo carosello -->
+
+    <!-----------------------------------------
+        CAROSELLO Header carosello 
+    ------------------------------------------->
        <!-- <section id="header-carousel-section">
             <div id="carouselHeader" class="carousel slide carousel-fade mb-5">
                 <div class="carousel-inner">
@@ -107,7 +114,8 @@ export default {
        </section> -->
 
         
-<!-- <MainCircle /> -->
+    <!-- <MainCircle /> -->
+    
        <!--  <section class="text-center mb-5">
             <div class="container">
                 <h3 class="fw-bold">
@@ -163,7 +171,9 @@ export default {
             </div>
         </section> -->
 
-       <!-- PRIMO CAROSELLO FATTO CON SWIPER-->
+    <!----------------------------------------- 
+        PRIMO CAROSELLO FATTO CON SWIPER
+    ------------------------------------------->
        <!-- <section id="professionalTrainingsSection watch fade-in" class="swiper-section mb-5 py-3">
             <div class="container">
                 <div class="text-center mb-5">
@@ -242,7 +252,9 @@ export default {
             </div>
         </section> -->
 
-        <!-- Secondo SLIDER FATTO CON SWIPER -->
+    <!----------------------------------------- 
+        Secondo SLIDER FATTO CON SWIPER 
+    ------------------------------------------->
         <!-- <section id="NewArticleSection" class="pb-5 pt-5">
             <div class="container">
                 <div class="text-center mb-5">

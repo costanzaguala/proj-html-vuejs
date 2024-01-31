@@ -43,7 +43,7 @@ export default {
           <div class="card shadow-sm carta-flippata">
             <div class="carta-flippata-inner bg-black">
               <div class="carta-flippata-front bg-black text-white">
-                <div class="text-white retro-card">
+                <div class="text-white retro-card ">
                   <h5>
                   BASIC
                  </h5>

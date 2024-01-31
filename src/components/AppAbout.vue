@@ -145,7 +145,9 @@ export default {
 
 </template>
 -->
-<style lang="scss" scoped>/* .title-page-section {
+<style lang="scss" scoped>
+
+/* .title-page-section {
     position: relative;
     min-height: 500px;
     background-image: radial-gradient(transparent 1%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%), url("../assets/img/event2.jpg");
