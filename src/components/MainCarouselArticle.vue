@@ -194,6 +194,7 @@ export default {
 .card{
     box-shadow: 0 0 10px 0px;
     margin: 20px 10px;
+    min-height: 425px;
 }
 .card:hover{
      visibility: visible;

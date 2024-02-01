@@ -1,8 +1,8 @@
 <script>
 import { store } from '../store.js';
-import MainCircle from '../components/MainCircle.vue'
+/* import MainCircle from '../components/MainCircle.vue'
 import SingleEventCard from '../components/SingleEventCard.vue'
-import slideShow from '../components/slideShow.vue'
+import slideShow from '../components/slideShow.vue' */
 
 /* import PackagesPage from './PackagesPage.vue'
 import EventsPage from './EventsPage.vue'

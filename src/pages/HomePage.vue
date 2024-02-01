@@ -1,7 +1,7 @@
 <script>
 import { store } from '../store.js';
 import MainCircle from '../components/MainCircle.vue'
-import SingleEventCard from '../components/SingleEventCard.vue'
+/* import SingleEventCard from '../components/SingleEventCard.vue' */
 import slideShow from '../components/slideShow.vue'
 import MainCarouselTraining from '../components/MainCarouselTraining.vue'
 import MainCarouselArticle from '../components/MainCarouselArticle.vue'
@@ -38,7 +38,7 @@ export default {
      },
      components: {
         MainCircle,
-        SingleEventCard,
+        /* SingleEventCard, */
         slideShow,
         MainCarouselTraining,
         MainCarouselArticle,

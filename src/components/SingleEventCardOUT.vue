@@ -1,5 +1,5 @@
 <script>
-import { store } from '../store.js';
+/* import { store } from '../store.js';
 
 export default {
     data() {
@@ -17,10 +17,10 @@ export default {
         city: String,
         type: String,
     }
-}
+} */
 </script>
 
-<template>
+<!-- <template>
     <div class="card mb-4 position-relative">
         <img :src="'../src//assets/img/' + img" class="card-img-top" alt="...">
         <div class="card-body">
@@ -43,7 +43,7 @@ export default {
                 <span class="card-date-m">Jun</span>
             </span>
         </div>
-    </div>
+    </div> -->
         <!-- <div class="mb-4">
             <img :src="'../src//assets/img/' + img" class="card-img-top" alt="...">
             <div class="card-body">
@@ -60,11 +60,11 @@ export default {
                     {{ type }}
                 </span>
             </div>
-        </div> -->
-</template>
+        </div> 
+</template> -->
 
 <style lang="scss" scoped>
-.card-date{
+/* .card-date{
     position: absolute;
     top: 10px;
     left: 10px;
@@ -84,5 +84,5 @@ export default {
         bottom: 10px
     }
 }
-
+ */
 </style>

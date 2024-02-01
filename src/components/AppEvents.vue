@@ -14,14 +14,7 @@ export default {
             store.flagEvents = false
         },
     },
-    props:{
-        img: String,
-        name: String,
-        fDate: String,
-        lDate: String,
-        city: String,
-        type: String,
-    }
+    
 }
 </script>
 
@@ -48,7 +41,8 @@ export default {
                             :style="{backgroundImage : 'url(../src/assets/img/' + cardEvent.img + ')',backgroundPosition: 'center', height: '300px', width: '100%', backgroundSize: 'cover'}">
                                 <div class="inside-card-date">
                                     <p class="text-dark">
-                                        {{ firstDate }}
+                                        {{ cardEvent.firstDate.split('@')[0].split('/')[2] }} <br>
+                                        {{ cardEvent.firstDate.split('@')[0].split('/')[1] }}
                                     </p>
                                 </div>
                             </div>

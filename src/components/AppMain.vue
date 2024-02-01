@@ -1,7 +1,7 @@
 <script>
 import { store } from '../store.js';
 import MainCircle from './MainCircle.vue'
-import SingleEventCard from './SingleEventCard.vue'
+/* import SingleEventCard from './SingleEventCard.vue' */
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css/navigation';
