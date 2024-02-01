@@ -54,6 +54,7 @@ export default {
      components: {
         Swiper,
         SwiperSlide,
+
     },
     
     setup() {
@@ -123,23 +124,21 @@ export default {
                 <swiper-slide v-for="(elem, i) in Experts">
                     <div class="card">
                         <div class="card_content text-center d-flex flex-column align-items-center justify-content-center">
-                            <div>
-                                <img :src="getImagePath('../assets/img/' + elem.image)" alt="" >
+                            <div class="image-section">
+                                <img :src="getImagePath('../assets/img/' + elem.image)" alt="">
                             </div>
-                            <div class="black-section d-flex flex-column align-items-center justify-content-center">
-                                <p>
-                                    {{ elem.name }}
-                                </p>
-                                <p>
-                                    {{ elem.profession }}
-                                </p>
+
+                        </div>
+
+                        <div class="black-section d-flex flex-column align-items-center justify-content-center">
+                                <p>{{ elem.name }}</p>
+                                <p>{{ elem.profession }}</p>
                                 <div class="d-flex align-items-center">
                                     <i class="fa-brands fa-facebook-f"></i>
                                     <i class="fa-brands fa-instagram"></i>
                                     <i class="fa-brands fa-twitter"></i>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </swiper-slide>
             </swiper>
@@ -150,35 +149,105 @@ export default {
 
 <style lang="scss" scoped>
 
-
-#expert-staff {
-
-    img{
-        width: 100%;
-    }
-
-    .card {
-        border: 10px solid #fbfbfb;
-    }
-}
-
-.black-section {
-    position: absolute;
-    background-color: black;
+.image-section {
     width: 100%;
-    height: 120px;
-    bottom: 0;
-    color: white;
-    line-height: 0.5;
-    
-    i{
-        color: white;
-        padding: 5px
+}
+#expert-staff {
+  img {
+    width: 100%;
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    border: 10px solid #fbfbfb;
+    animation: rollIn 1.5s ease-out forwards;
+
+    .image-section {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        display: block;
+        transition: transform 0.3s ease-in-out;
+        z-index: 2;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 1;
+        transition: background-color 0.3s ease-in-out;
+      }
     }
 
-    > p:nth-child(2) {
-        color: grey;
+    &:hover .image-section::before {
+      background-color: rgba(0, 0, 0, 0.5);
     }
+
+    &:hover .image-section img {
+      transform: scale(1.1);
+    }
+
+    .black-section {
+      position: absolute;
+      background-color: black;
+      width: 100%;
+      height: 120px;
+      z-index: 1;
+      bottom: 0;
+      color: white;
+      line-height: 0.5;
+
+      i {
+        color: white;
+        padding: 5px;
+      }
+
+      > p:nth-child(2) {
+        color: grey;
+      }
+
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-20px);
+        }
+        60% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &:hover .black-section {
+      animation: bounce 1.5s ease 1 forwards;
+    }
+  }
+
+  @keyframes rollIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
+
+
+
 
 </style>

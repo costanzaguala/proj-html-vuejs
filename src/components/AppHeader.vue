@@ -14,10 +14,10 @@ export default {
 <template> 
 
     <header class="fixed-top">
-        <nav class="navbar">
-            <div class="container navbar-expand-lg">
+        <nav class="navbar d-flex flex-nowrap align-items-center justify-content-center">
+            <div class="d-flex navbar-expand-lg m-0 align-items-center justify-content-center">
 
-                <img src="../assets/img/logo-gobike.png" alt="logo">
+                <img class="mx-5" src="../assets/img/logo-gobike.png" alt="logo">
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -72,23 +72,44 @@ export default {
                     </div>
                 </div>
 
-                <div class="d-flex">
-                    <div class="button-upcoming-events d-flex align-items-center"> 
-                        <img src="../assets/img/helmet.png" alt="">  
-                        <!-- <p>
-                            Upcoming events
-                        </p> -->
-                        <p>
-                            <router-link :to="{ name: 'events'}" class="text-white text-decoration-none fw-bold">Upcoming events</router-link>
-                        </p>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-            
-
-
             </div>
+
+            
+            <div class="d-flex align-items-center">
+
+            <button class="navbar-toggler mx-5 d-none d-lg-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+      
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                         </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-none d-lg-flex">
+                <div class="button-upcoming-events d-flex align-items-center">
+                    <img src="../assets/img/racing-helmet.png" alt="">
+                     <p>
+                        <router-link :to="{ name: 'events'}" class="text-white text-decoration-none fw-bold">Upcoming events</router-link>
+                    </p>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+        </div>
+
         </nav> 
+
+        
     </header>
 
 </template>
@@ -122,7 +143,6 @@ img {
 }
 
 .button-upcoming-events img {
-    filter: invert(100%);
     width: 50px;
 }
 
@@ -134,7 +154,21 @@ p {
     margin-bottom: 0;
 }
 
+#second-button {
+    border-bottom: 1px solid black;
+}
 
+.navbar-toggler {
+    margin: 20px;
+  }
 
+@media (max-width: 991.98px) {
+    .d-lg-flex {
+      display: none !important; 
+    }
+  }
 
+  .navbar-toggler {
+    margin: 20px;
+  }
 </style>
