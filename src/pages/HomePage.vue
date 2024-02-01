@@ -5,6 +5,9 @@ import SingleEventCard from '../components/SingleEventCard.vue'
 import slideShow from '../components/slideShow.vue'
 import MainCarouselTraining from '../components/MainCarouselTraining.vue'
 import MainCarouselArticle from '../components/MainCarouselArticle.vue'
+import AppEvents from '../components/AppEvents.vue';
+import AppPackages from '../components/AppPackages.vue';
+import CarouselExpertTrainers from '../components/CarouselExpertTrainers.vue'
 
 
 
@@ -39,9 +42,9 @@ export default {
         slideShow,
         MainCarouselTraining,
         MainCarouselArticle,
-            /*      PackagesPage,
-                    EventsPage,
-                    TrainingPage, */
+        AppEvents,
+        CarouselExpertTrainers,
+        AppPackages,
         Swiper,
         SwiperSlide,
     },
@@ -72,18 +75,14 @@ export default {
     <!-- PRIMO CAROSELLO FATTO CON SWIPER TrainingCarousel-->
         <MainCarouselTraining />
 
-        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE EVENTI DA INSERIRE QUI</p>
         <!-- Componente eventi -->
-            <!-- <EventsPage /> -->
+        <AppEvents />
 
+        <!-- Componente TRAINERS -->
+        <CarouselExpertTrainers />
 
-        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE OUR EXPERT TRAINER DA INSERIRE QUI</p>
-        <!-- Componente Trainer -->
-
-
-        <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE PACKAGES TRAINER DA INSERIRE QUI</p>
         <!-- Componente Packages -->
-            <!-- <PackagesPage /> -->
+        <AppPackages />
 
             
         
@@ -182,7 +181,7 @@ export default {
     opacity: 1;
     transform: translateY(0vh);
 }
-.inline-event{
+/* .inline-event{
     border: 2px solid black;
 }
 .inline-event:hover{
@@ -194,7 +193,7 @@ export default {
         overflow: hidden;
         border: 1px solid black;
     }
-}
+} */
 
 .button_prev, .button_next{
     width: 60px;
