@@ -12,7 +12,7 @@ export default {
 <template>
     <section class="my-5">
         <div class="container-lg container-md container-sm">
-            <div class="row text-sm-center justify-content-md-center">
+            <div class="row justify-content-md-center justify-content-lg-start">
                 <div class="col-lg-8 col-md-12 d-flex justify-content-center mb-md-5">
                     <!-- <img class="img-fluid rotate" src="../assets/img/bike-circle.png" alt="">
                     <img class="img-fluid" src="../assets/img/bike-player.png" alt=""> -->
@@ -82,7 +82,7 @@ export default {
     z-index: 0;
     width: 100%;
 }
-/* .biker-circle img:first-child{
+.biker-circle img:first-child{
     position: absolute;
     z-index: 0;
     top: 10px;
@@ -90,7 +90,7 @@ export default {
 }
 .biker-circle img:last-child{
     z-index: 10;
-} */
+}
 
 .rotate {
   animation-duration: 15s;

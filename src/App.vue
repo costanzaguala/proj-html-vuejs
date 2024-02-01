@@ -39,11 +39,11 @@ export default {
 
     <AppHeader/>
 
-    <AppAbout/>
+<!--     <AppAbout/>
 
     <AppPackages/>
 
-    <AppEvents/>
+    <AppEvents/> -->
 
     <AppMain/>
 
