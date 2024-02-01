@@ -14,6 +14,7 @@ export default {
 
 <template>
 
+
     <!--EVENTI-->
 
     <!--GRIGLIA A "RIGHE"-->

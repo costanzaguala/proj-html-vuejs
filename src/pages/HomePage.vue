@@ -61,28 +61,33 @@ export default {
 }
 </script>
 
-<template>
-    <main class="mb-4">
-    <!-- CAROSELLO HEADER-->
+<template >
+    
+    <!-- CAROSELLO HEADER SlideShow HEADER-->
         <slideShow />
 
     <!-- COMPONENTE BIKER-CIRCLE -->
         <MainCircle />
 
-    <!-- PRIMO CAROSELLO FATTO CON SWIPER-->
+    <!-- PRIMO CAROSELLO FATTO CON SWIPER TrainingCarousel-->
         <MainCarouselTraining />
 
         <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE EVENTI DA INSERIRE QUI</p>
         <!-- Componente eventi -->
             <!-- <EventsPage /> -->
+
+
         <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE OUR EXPERT TRAINER DA INSERIRE QUI</p>
         <!-- Componente Trainer -->
+
+
         <p class="fw-bold text-center fs-1 bg-dark text-white py-5">SEZIONE PACKAGES TRAINER DA INSERIRE QUI</p>
         <!-- Componente Packages -->
             <!-- <PackagesPage /> -->
 
+            
         
-    <!-- Secondo SLIDER FATTO CON SWIPER -->
+    <!-- Secondo SLIDER FATTO CON SWIPER ArticleCarousel-->
         <MainCarouselArticle />
         
         <!-- <section class="events-container">
@@ -164,7 +169,7 @@ export default {
                 </div>
             </div>
         </section> -->
-    </main>
+
 </template>
 
 <style lang="scss" scoped>

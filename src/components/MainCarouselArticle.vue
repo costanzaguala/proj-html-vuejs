@@ -16,6 +16,26 @@ export default {
     data() {
         return {
             store,
+            swiperOptions: {
+                    breakpoints: {       
+                    320: {       
+                    slidesPerView: 1,
+                    spaceBetween: 10     
+                        },          
+                    560: {       
+                    slidesPerView: 2,       
+                    spaceBetween: 50     
+                    },
+                    992: {       
+                    slidesPerView: 3,       
+                    spaceBetween: 40     
+                    },
+                    1200: {       
+                    slidesPerView: 4,       
+                    spaceBetween: 30     
+                    },
+                }   
+            }
             
         };
      },
@@ -47,6 +67,7 @@ export default {
             :slidesPerView="4"
             :spaceBetween="30"
             :loop="true"
+            :breakpoints="swiperOptions.breakpoints"
             :modules="modules"
             class="mySwiper"
             >
