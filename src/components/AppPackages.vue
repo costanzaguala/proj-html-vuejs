@@ -247,8 +247,13 @@ export default {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-.carta-flippata:hover .carta-flippata-inner{
+.carta-flippata .carta-flippata-inner:hover{
   transform: rotateY(180deg);
+}
+
+.carta-flippata-front:hover {
+  transform: rotateY(180deg);
+  display: none;
 }
 .carta-flippata-front, .carta-flippata-back {
   backface-visibility: hidden;
