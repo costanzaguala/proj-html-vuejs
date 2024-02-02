@@ -27,10 +27,10 @@ export default {
     <section>
         <div class="container">
                 <div class="d-flex justify-content-end mb-3">
-                    <button @click="invertLineToGrid()" class="px-2 border-0 me-1 rounded">
+                    <button @click="invertLineToGrid()" class="px-2 border-0 me-1 rounded" :class="{active : store.flagEvents}">
                         <i class="fa-solid fa-square"></i>
                     </button>
-                    <button @click="invertGridToLine()" class="px-2 bg-dark text-white border-0 rounded">
+                    <button @click="invertGridToLine()" class="px-2 text-white border-0 rounded" :class="{active : store.flagEvents}">
                         <i class="fa-solid fa-bars-staggered"></i>
                     </button>
                 </div>
@@ -197,5 +197,10 @@ export default {
 
 .inside-card-date > p {
     text-align: center;
+}
+
+.active{
+    background-color: black;
+    color: white;
 }
 </style>

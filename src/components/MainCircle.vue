@@ -10,16 +10,14 @@ export default {
 </script>
 
 <template>
-    <section class="my-5">
+    <section class="my-5 reveal">
         <div class="container-lg container-md container-sm">
             <div class="row justify-content-md-center justify-content-lg-start">
                 <div class="col-lg-8 col-md-12 d-flex justify-content-center mb-md-5">
-                    <!-- <img class="img-fluid rotate" src="../assets/img/bike-circle.png" alt="">
-                    <img class="img-fluid" src="../assets/img/bike-player.png" alt=""> -->
                     <div class="position-relative biker-img">
-                        <img class="img-fluid" src="../assets/img/bike-player.png" alt="">
+                        <img class="img-fluid scroll-view" src="../assets/img/bike-player.png" alt="">
                         <div class="circle-rotate img-fluid z-0">
-                            <img class="img-fluid rotate" src="../assets/img/bike-circle.png" alt="">
+                            <img class="img-fluid rotate fade-in" src="../assets/img/bike-circle.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -44,7 +42,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <div class="row mb-4">
+                    <div class="row mb-4 watch fade-in">
                         <div class="col-md-4 col-sm-12">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiEkXijI-Wb0tmGAK8AhkPkBdb_qm_8FCF5w&usqp=CAU" alt="" class="img-fluid">
                         </div>
@@ -66,10 +64,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-/* .biker-circle{
-    position: relative;
-
-} */
 
 .biker-img img{
     position: relative;
@@ -103,12 +97,24 @@ export default {
   from { transform: rotate(  0deg); }
   to   { transform: rotate(360deg); }
 }
-
 .btn-know{
     background-color: black;
     text-decoration: none;
     color: white;
     font-weight: bold;
     padding: 25px 40px;
+}
+
+.scroll-view{
+    scale: .4; opacity: 0;
+    animation: fade-in 3s ease-in forwards;
+    animation-timeline: view();
+    animation-range-start: 100px;
+    animation-range-end: 500px;
+
+}
+
+@keyframes fade-in{
+    to { scale: 1; opacity: 1; }
 }
 </style>

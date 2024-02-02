@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <section id="header-carousel-section">
+    <section id="header-carousel-section" class="reveal">
         <div id="carouselHeader" class="carousel slide carousel-fade mb-5">
             <div class="carousel-inner">
                 <div class="carousel-item active">

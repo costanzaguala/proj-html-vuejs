@@ -1,16 +1,5 @@
 <script>
 import { store } from '../store.js';
-/* import MainCircle from '../components/MainCircle.vue'
-import SingleEventCard from '../components/SingleEventCard.vue'
-import slideShow from '../components/slideShow.vue' */
-
-/* import PackagesPage from './PackagesPage.vue'
-import EventsPage from './EventsPage.vue'
-import TrainingPage from './TrainingPage.vue' */
-
-
-
-
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css/navigation';
 
@@ -152,6 +141,12 @@ export default {
 .carousel_card{
     border: 10px solid black;
     position: relative;
+    &:hover{
+        cursor: grab;
+    }
+    &:active{
+        cursor: grabbing;
+    }
     .card_content{
         position: absolute;
         top: 0;

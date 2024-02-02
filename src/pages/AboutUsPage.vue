@@ -1,8 +1,9 @@
 <script>
 import { store } from '../store.js';
 import MainCircle from '../components/MainCircle.vue';
-import CarouselExpertTrainers from '../components/carouselExpertTrainers.vue'
+import CarouselExpertTrainers from '../components/CarouselExpertTrainers.vue'
 import CarouselCustomers from '../components/CarouselCustomers.vue'
+import AppLoaderPage from '../components/AppLoaderPage.vue';
 
 // IMPORT SWIPER
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -20,11 +21,12 @@ export default {
         };
      },
      components: {
-    MainCircle,
-    Swiper,
-    SwiperSlide,
-    CarouselExpertTrainers,
-    CarouselCustomers,
+        MainCircle,
+        Swiper,
+        SwiperSlide,
+        CarouselExpertTrainers,
+        CarouselCustomers,
+        AppLoaderPage,
 },
     
     setup() {
@@ -38,7 +40,7 @@ export default {
 </script>
 
 <template>
-
+    <AppLoaderPage />
     <section class="overlay">
     
         <div class="title-page-section">
@@ -60,9 +62,9 @@ export default {
         </div>
     </section>
 
-    <MainCircle/>
-    <CarouselExpertTrainers/>
-    <CarouselCustomers/>
+    <MainCircle />
+    <CarouselExpertTrainers />
+    <CarouselCustomers />
 
 </template>
 

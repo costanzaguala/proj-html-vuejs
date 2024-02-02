@@ -206,6 +206,10 @@ export default {
      rotateY(1.88deg)
      scale3d(1, 1, 1);
      margin-right: 30px;
+     cursor:grab
+}
+.card:active{
+    cursor: grabbing
 }
 @keyframes fadeInLeft{
     0% {

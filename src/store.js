@@ -90,5 +90,5 @@ export const store = reactive ({
             img: 'event10.jpg'
         },
     ],
-    flagEvents: true 
+    flagEvents: false
 })

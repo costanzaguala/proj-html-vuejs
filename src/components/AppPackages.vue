@@ -251,10 +251,6 @@ export default {
   transform: rotateY(180deg);
 }
 
-.carta-flippata-front:hover {
-  transform: rotateY(180deg);
-  display: none;
-}
 .carta-flippata-front, .carta-flippata-back {
   backface-visibility: hidden;
 

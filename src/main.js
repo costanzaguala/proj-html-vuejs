@@ -17,6 +17,8 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
 /* add icons to the library */
 library.add(faUserSecret)
 
+/* ScrollReveal().reveal('.reveal');
+console.log(ScrollReveal()) */
 createApp(App).use(router)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')
