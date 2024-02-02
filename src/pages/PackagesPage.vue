@@ -15,6 +15,9 @@ export default {
 
 <template>
 
+  <div class="scroll-watcher"></div>
+
+
     <!--PACKAGES-->
     <div class="container packages">
 
@@ -258,4 +261,21 @@ export default {
 .carta-flippata-front {
   transform: rotateY(180deg);
 }
+
+.scroll-watcher{
+    height: 5px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background-color: black;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll(y);
+}
+@keyframes scroll-watcher{
+    to { scale: 1 1;}
+}
+
 </style>
