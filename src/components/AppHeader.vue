@@ -14,7 +14,7 @@ export default {
 <template> 
 
     <header class="fixed-top">
-        <nav class="navbar d-flex flex-nowrap align-items-center justify-content-center">
+        <nav class="container-sm navbar d-flex flex-nowrap align-items-center justify-content-center">
             <div class="d-flex navbar-expand-lg m-0 align-items-center justify-content-center">
 
                 <img class="mx-5" src="../assets/img/logo-gobike.png" alt="logo">
@@ -30,7 +30,7 @@ export default {
 
                     <div class="offcanvas-body">
 
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 flex-direction-column">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 flex-md-row flex-column-sm">
                             <li class="nav-item">
                             <router-link :to="{ name: 'home' }" class="nav-link active">Home</router-link>
                             </li>
@@ -92,7 +92,7 @@ export default {
                 </div>
             </div>
 
-            <div class="d-none d-lg-flex">
+            <div class="d-none d-md-flex">
                 <div class="button-upcoming-events d-flex align-items-center">
                     <img src="../assets/img/racing-helmet.png" alt="">
                      <p>
@@ -121,9 +121,7 @@ img {
     width: 220px;
 }
 
-.navbar {
-    margin: 0 100px;
-}
+
 
 .navbar-expand-lg .offcanvas {
     flex-grow: 0;
